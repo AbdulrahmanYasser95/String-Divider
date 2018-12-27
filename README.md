@@ -3,4 +3,5 @@ A program that given a string prints its even-indexed and odd-indexed characters
 
 <b>Boundary-Conditions</b><br>
 -Number of entered strings, T, is from 1 to 10<br>
--Max length of each strength=10000
+-Max length of each strength=10000<br><br>
+readline() function is courtesy of HackerRank
