@@ -1,0 +1,65 @@
+<?php
+$_fp = fopen("php://stdin", "r");
+/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+
+    //printf("starting\n");
+    $T=0;
+    
+    fscanf($_fp, "%d\n", $T);
+    //printf("T=%d\n",$T);
+    if ((0 < $T)&&($T < 11)) {
+      $inS;
+      $outS=[];
+      for ($i=0; $i < $T; $i++) {//chech here!
+        // fgets(inS,10000,stdin);
+        $outStrIndx = 0;
+        $outS=[];
+        fscanf($_fp, "%s\n", $inS);
+        $inStrL = strlen($inS);
+        //printf("%s\n",$inS);
+        //printf("printed inS 1\n");
+        //printf("%d\n",$inStrL);
+        if ((2 <= $inStrL)&&($inStrL <= 10000)) {
+          // puts(inS);
+          //printf("%s\n",$inS);
+          //printf("printed inS\n");
+          for ($inStrIndx = 0; $inStrIndx < $inStrL; $inStrIndx += 2) {
+            if ($inS[$inStrIndx] != '\0') {
+              $outS[$outStrIndx] = $inS[$inStrIndx];
+              // printf("inStrIndx=%d\n",inStrIndx);
+              // printf("outStrIndx=%d\n",outStrIndx);
+              // printf("outS[outStrIndx]=%c\n",outS[outStrIndx++]);
+              $outStrIndx++;
+            }
+          }
+          // outStrIndx++;
+          $outS[$outStrIndx] = ' ';
+          // printf("outStrIndx=%d\n",outStrIndx);
+          // printf("outS[outStrIndx]=%c\n",outS[outStrIndx++]);
+          // outStrIndx++;
+          // outS[outStrIndx]=' ';
+          // printf("outStrIndx=%d\n",outStrIndx);
+          // printf("outS[outStrIndx]=%c\n",outS[outStrIndx++]);
+          $outStrIndx++;
+          for ($inStrIndx = 1; $inStrIndx < $inStrL; $inStrIndx += 2) {
+            if ($inS[$inStrIndx] != '\0') {
+              $outS[$outStrIndx] = $inS[$inStrIndx];
+              // printf("inStrIndx=%d\n",inStrIndx);
+              // printf("outStrIndx=%d\n",outStrIndx);
+              // printf("outS[outStrIndx]=%c\n",outS[outStrIndx++]);
+              $outStrIndx++;
+            }
+          }
+          // outStrIndx++;
+          //$outS[$outStrIndx] = '\n';
+          //$outStrIndx++;
+        }
+        foreach($outS as $value)
+        {
+            printf("%s",$value);
+        }
+        printf("\n");
+      }
+    
+    }
+?>
